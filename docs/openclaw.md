@@ -1,3 +1,8 @@
+---
+layout: default
+title: OpenClaw ガイド
+---
+
 # OpenClaw - オープンソースAIエージェント完全ガイド
 
 ## 目次
