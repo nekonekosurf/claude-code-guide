@@ -1,9 +1,8 @@
 ---
 layout: default
 title: ローカルLLM構築ガイド
-render_with_liquid: false
 ---
-
+{% raw %}
 # Claude Codeクローン構築ガイド - ローカルLLMでAIコーディングエージェントを作る
 
 > 作成日: 2026-03-03
@@ -7487,3 +7486,4 @@ if __name__ == "__main__":
 
 > このガイドは `/home/neko/projects/claude-code-guide/BUILD_YOUR_OWN.md` に保存されています。
 > 最終更新: 2026-03-03
+{% endraw %}
