@@ -1,3 +1,9 @@
+---
+layout: default
+title: ローカルLLM構築ガイド
+render_with_liquid: false
+---
+
 # Claude Codeクローン構築ガイド - ローカルLLMでAIコーディングエージェントを作る
 
 > 作成日: 2026-03-03
