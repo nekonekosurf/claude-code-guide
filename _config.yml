@@ -1,3 +1,6 @@
 title: Claude Code マスターガイド
 description: Claude Codeの使い方・設定・Tipsを網羅した包括的リファレンス
 theme: jekyll-theme-cayman
+
+kramdown:
+  input: GFM
