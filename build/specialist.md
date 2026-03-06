@@ -85,8 +85,6 @@ Fine-tuning後:
 #### MultipleNegativesRankingLoss（推奨）
 
 
-<details>
-<summary>MultipleNegativesRankingLoss（推...（Python）</summary>
 
 ```python
 # (anchor, positive) ペアのみでOK
@@ -98,7 +96,6 @@ pairs = [
 ]
 ```
 
-</details>
 
 
 **特徴:**
@@ -146,8 +143,6 @@ MRLの学習:
 #### ステップ1: ドメインコーパスからペア生成
 
 
-<details>
-<summary>aerospace_pair_generator.py（Python）</summary>
 
 ```python
 # aerospace_pair_generator.py
@@ -279,14 +274,11 @@ if __name__ == "__main__":
     print(f"生成された正例ペア数: {len(pairs)}")
 ```
 
-</details>
 
 
 #### ステップ2: sentence-transformers v3による公式Hard Negative Mining
 
 
-<details>
-<summary>hard_negative_mining_v3.py（Python）</summary>
 
 ```python
 # hard_negative_mining_v3.py
@@ -346,7 +338,6 @@ print(dataset_with_negatives)
 # })
 ```
 
-</details>
 
 
 ---
@@ -354,8 +345,6 @@ print(dataset_with_negatives)
 ### Fine-tuning実装コード
 
 
-<details>
-<summary>finetune_aerospace_embeddings.py（Python）</summary>
 
 ```python
 # finetune_aerospace_embeddings.py
@@ -509,7 +498,6 @@ if __name__ == "__main__":
     model = main()
 ```
 
-</details>
 
 
 ---
@@ -517,8 +505,6 @@ if __name__ == "__main__":
 ### 精度評価（Recall@K、MRR、NDCG）
 
 
-<details>
-<summary>evaluate_embeddings.py（Python）</summary>
 
 ```python
 # evaluate_embeddings.py
@@ -664,7 +650,6 @@ if __name__ == "__main__":
     compare_models()
 ```
 
-</details>
 
 
 ---
@@ -672,8 +657,6 @@ if __name__ == "__main__":
 ### Fine-tuning済みEmbeddingのRAG統合
 
 
-<details>
-<summary>rag_with_finetuned_embedding.py（Python）</summary>
 
 ```python
 # rag_with_finetuned_embedding.py
@@ -774,7 +757,6 @@ if __name__ == "__main__":
         print(f"類似度: {r['similarity']:.3f} | {r['document'][:50]}...")
 ```
 
-</details>
 
 
 ---
@@ -1111,8 +1093,6 @@ AIエージェントを本番運用する際に人間の判断が必要なポイ
 ### SQLiteフィードバックDB設計
 
 
-<details>
-<summary>セッション管理（SQL）</summary>
 
 ```sql
 -- feedback_schema.sql
@@ -1201,7 +1181,6 @@ CREATE INDEX idx_conversations_created ON conversations(created_at);
 CREATE INDEX idx_knowledge_gaps_topic ON knowledge_gaps(topic);
 ```
 
-</details>
 
 
 ---
@@ -1209,8 +1188,6 @@ CREATE INDEX idx_knowledge_gaps_topic ON knowledge_gaps(topic);
 ### StreamlitによるフィードバックUI実装
 
 
-<details>
-<summary>feedback_app.py（Python）</summary>
 
 ```python
 # feedback_app.py
@@ -1622,7 +1599,6 @@ if __name__ == "__main__":
     main()
 ```
 
-</details>
 
 
 ---
@@ -1630,8 +1606,6 @@ if __name__ == "__main__":
 ### フィードバックからDPOデータへの自動変換パイプライン
 
 
-<details>
-<summary>feedback_to_dpo_pipeline.py（Python）</summary>
 
 ```python
 # feedback_to_dpo_pipeline.py
@@ -1812,7 +1786,6 @@ if __name__ == "__main__":
     print(f"\n生成されたDPOペア数: {count}")
 ```
 
-</details>
 
 
 ---
@@ -1846,8 +1819,6 @@ if __name__ == "__main__":
 ### 実運用時の注意点（自動化パイプライン）
 
 
-<details>
-<summary>フィードバック収集システム</summary>
 
 ```
 自動化のリスクと対策:
@@ -1873,7 +1844,6 @@ if __name__ == "__main__":
     - 定期的に汎用ベンチマーク（MMLU等）でも評価する
 ```
 
-</details>
 
 
 ---

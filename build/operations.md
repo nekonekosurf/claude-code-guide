@@ -98,8 +98,6 @@ AIエージェントがシェルコマンドを実行する際のセキュリテ
 ### Docker サンドボックス実装
 
 
-<details>
-<summary>sandbox.py（Python）</summary>
 
 ```python
 # sandbox.py
@@ -222,14 +220,11 @@ class GVisorSandbox(DockerSandbox):
         return await super().execute(command, **kwargs)
 ```
 
-</details>
 
 
 ### パーミッション管理
 
 
-<details>
-<summary>permissions.py（Python）</summary>
 
 ```python
 # permissions.py
@@ -323,14 +318,11 @@ class PermissionGuard:
         return False
 ```
 
-</details>
 
 
 ### 使用例: パーミッション付きエージェント
 
 
-<details>
-<summary>AgentCore 実装（Python）</summary>
 
 ```python
 # 読み取り専用モード
@@ -345,7 +337,6 @@ async def safe_dispatch(tool_name: str, tool_input: dict) -> str:
     return await agent.tools.dispatch(tool_name, tool_input)
 ```
 
-</details>
 
 
 ---
@@ -358,8 +349,6 @@ async def safe_dispatch(tool_name: str, tool_input: dict) -> str:
 ### セッションの保存・復元
 
 
-<details>
-<summary>session_manager.py（Python）</summary>
 
 ```python
 # session_manager.py
@@ -489,14 +478,11 @@ class SessionManager:
             print(f"{len(archived)}件のセッションをアーカイブしました")
 ```
 
-</details>
 
 
 ### 長期記憶システム（Auto Memory相当）
 
 
-<details>
-<summary>long_memory.py（Python）</summary>
 
 ```python
 # long_memory.py
@@ -691,7 +677,6 @@ class MemorySystem:
             self.records.append(r)
 ```
 
-</details>
 
 
 ---
@@ -728,8 +713,6 @@ Week 1 チェックリスト:
 ```
 
 
-<details>
-<summary>minimal_agent.py（Python）</summary>
 
 ```python
 # Phase 1 の最小実装（全部で100行以内）
@@ -844,7 +827,6 @@ if __name__ == "__main__":
     asyncio.run(run(" ".join(sys.argv[1:])))
 ```
 
-</details>
 
 
 ### Phase 2: ツール充実（2週間）
@@ -862,8 +844,6 @@ Week 2-3 チェックリスト:
 ```
 
 
-<details>
-<summary>セッション管理（Python）</summary>
 
 ```python
 # ストリーミング出力の実装
@@ -883,7 +863,6 @@ async def run_with_streaming(user_input: str):
     print()  # 改行
 ```
 
-</details>
 
 
 ### Phase 3: マルチモデル（1ヶ月）
