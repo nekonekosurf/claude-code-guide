@@ -715,16 +715,16 @@ class SubAgentManager:
 以下のJSON形式で回答してください:
 ```json
 [
-  {{
+  {% raw %}{{
     "task_id": "task_1",
     "description": "サブタスクの説明",
     "depends_on": []
-  }},
-  {{
+  }}{% endraw %},
+  {% raw %}{{
     "task_id": "task_2",
     "description": "別のサブタスク",
     "depends_on": ["task_1"]
-  }}
+  }}{% endraw %}
 ]
 ```"""
 

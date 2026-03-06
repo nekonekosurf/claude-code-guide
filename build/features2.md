@@ -84,7 +84,7 @@ class RAGEngine:
     def add_documents(self, documents: list[dict]) -> int:
         """
         文書をインデックスに追加
-        documents: [{"text": "...", "metadata": {...}}, ...]
+        documents: [{"text": "...", "metadata": {...}}{% endraw %}, ...]
         """
         # チャンキング（500文字ごと、50文字オーバーラップ）
         new_chunks = []
@@ -490,8 +490,8 @@ async def extract_entities(
 形式:
 ```json
 [
-  {{"entity1": "衛星", "relation": "使用する", "entity2": "MLI"}},
-  {{"entity1": "MLI", "relation": "提供する", "entity2": "断熱性能"}}
+  {% raw %}{{"entity1": "衛星", "relation": "使用する", "entity2": "MLI"}}{% endraw %},
+  {% raw %}{{"entity1": "MLI", "relation": "提供する", "entity2": "断熱性能"}}{% endraw %}
 ]
 ```"""
 
@@ -687,7 +687,7 @@ def parent_child_search(
     leaf_chunks = [c for c in chunks if not c.children_ids]
 
     # 検索用の簡易インデックスを構築
-    search_docs = [{"text": c.text, "metadata": {"chunk_id": c.chunk_id}}
+    search_docs = [{"text": c.text, "metadata": {"chunk_id": c.chunk_id}}{% endraw %}
                    for c in leaf_chunks]
 
     results = rag.search(query)

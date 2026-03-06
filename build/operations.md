@@ -213,7 +213,7 @@ class GVisorSandbox(DockerSandbox):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # Dockerデーモンにgvisorランタイムが設定されている必要がある
-        # /etc/docker/daemon.json に "runtimes": {"runsc": {"path": "/usr/local/bin/runsc"}}
+        # /etc/docker/daemon.json に "runtimes": {"runsc": {"path": "/usr/local/bin/runsc"}}{% endraw %}
 
     async def execute(self, command: str, **kwargs) -> SandboxResult:
         # runtime="runsc" を指定してgVisorで実行
@@ -621,7 +621,7 @@ class MemorySystem:
 形式:
 ```json
 [
-  {{"content": "重要な情報", "type": "procedural|semantic|episodic", "importance": 0.8}}
+  {% raw %}{{"content": "重要な情報", "type": "procedural|semantic|episodic", "importance": 0.8}}{% endraw %}
 ]
 ```"""
 
@@ -750,7 +750,7 @@ TOOLS = [
             "description": "ファイルを読む",
             "parameters": {
                 "type": "object",
-                "properties": {"path": {"type": "string"}},
+                "properties": {"path": {"type": "string"}}{% endraw %},
                 "required": ["path"]
             }
         }
@@ -777,7 +777,7 @@ TOOLS = [
             "description": "シェルコマンドを実行する",
             "parameters": {
                 "type": "object",
-                "properties": {"cmd": {"type": "string"}},
+                "properties": {"cmd": {"type": "string"}}{% endraw %},
                 "required": ["cmd"]
             }
         }

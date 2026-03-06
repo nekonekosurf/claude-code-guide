@@ -765,7 +765,7 @@ claude mcp add --transport stdio --env AIRTABLE_API_KEY=YOUR_KEY airtable \
 | **Sequential Thinking** | 複雑な問題分解 |
 | **Context7** | 最新ドキュメント参照 |
 
-### 6.4 スコープ管理
+### 6.5 スコープ管理
 
 MCP サーバーの設定はスコープによって保存場所が異なります。チームで共有する場合は `project` スコープを使います。
 
@@ -788,10 +788,10 @@ claude mcp add --transport http hubspot --scope user https://mcp.hubspot.com/ant
 
 </details>
 
-### 6.5 MCP 管理コマンド
+### 6.6 MCP 管理コマンド
 
 <details markdown="1">
-<summary>6.5 MCP 管理コマンド（Bash）</summary>
+<summary>6.6 MCP 管理コマンド（Bash）</summary>
 
 ```bash
 claude mcp list              # 一覧表示
@@ -802,10 +802,10 @@ claude mcp remove github     # 削除
 
 </details>
 
-### 6.6 `.mcp.json` での環境変数展開
+### 6.7 `.mcp.json` での環境変数展開
 
 <details markdown="1">
-<summary>6.6 `.mcp.json` での環境変数展開（JSON）</summary>
+<summary>6.7 `.mcp.json` での環境変数展開（JSON）</summary>
 
 ```json
 {
@@ -823,7 +823,7 @@ claude mcp remove github     # 削除
 
 </details>
 
-### 6.7 Claude Code 自体を MCP サーバーとして使う
+### 6.8 Claude Code 自体を MCP サーバーとして使う
 
 ```bash
 claude mcp serve

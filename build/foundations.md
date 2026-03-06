@@ -348,7 +348,7 @@ def parse_tool_call_from_text(text: str) -> dict | None:
 
     # パターン1: JSONブロック形式
     # ```json
-    # {"tool": "Read", "input": {"file_path": "/path/to/file"}}
+    # {"tool": "Read", "input": {"file_path": "/path/to/file"}}{% endraw %}
     # ```
     json_pattern = r'```json\s*\n(.*?)\n```'
     match = re.search(json_pattern, text, re.DOTALL)
@@ -785,9 +785,9 @@ class ToolExecutor:
 
                 # 出力を制限するラッパー
                 wrapped = f"""
-{{
+{% raw %}{{
 {command}
-}} 2>&1 | head -c 30000
+}}{% endraw %} 2>&1 | head -c 30000
 echo "___EXIT_CODE_$?___"
 """
                 proc = await asyncio.create_subprocess_shell(
