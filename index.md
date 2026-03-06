@@ -7,7 +7,7 @@ title: Home
 
 Claude Code の使い方・設定・Tips を網羅した包括的リファレンスです。
 
-> **最終更新: 2026年3月3日 18:30 JST**
+> **最終更新: 2026年3月7日**
 
 Claude Code は Anthropic が提供するエージェント型コーディング環境です。ファイルの読み書き、コマンド実行、コード変更を自律的に行い、「何を作りたいか」を記述するだけで、コードベースの探索から実装まで一貫して処理します。
 
@@ -15,9 +15,26 @@ Claude Code は Anthropic が提供するエージェント型コーディング
 
 ## ガイド一覧
 
-### 📖 Claude Code 活用ガイド（README.md）
+<div class="nav-card">
 
-Claude Code の全機能を網羅した32章のリファレンス。
+### 📖 [Claude Code 活用ガイド →](README)
+
+Claude Code の全機能を網羅した**32章**のリファレンス。基礎から上級者向けまで段階的に学べます。
+
+</div>
+
+<div class="nav-card">
+
+### 🔧 [ローカルLLM構築ガイド →](BUILD_YOUR_OWN)
+
+ローカルLLMでClaude Code同等のAIエージェントをゼロから構築。vLLM、ファインチューニング、RAG、エージェント実装まで**19章+付録**。
+
+</div>
+
+---
+
+<details>
+<summary>📖 活用ガイド全32章の目次</summary>
 
 #### 基礎編
 
@@ -76,11 +93,10 @@ Claude Code の全機能を網羅した32章のリファレンス。
 | [31. ツール比較 2026年版](README.md#31-ツール比較-2026年版---cursor--copilot--aider--windsurf--cline) | Cursor / Copilot / Aider / Windsurf / Cline |
 | [32. 大規模プロジェクト](README.md#32-大規模プロジェクト---モノレポ複数言語コンテキスト制限対策) | モノレポ・複数言語・コンテキスト制限対策 |
 
----
+</details>
 
-### 🔧 ローカルLLM構築ガイド（BUILD_YOUR_OWN.md）
-
-ローカルLLMでClaude Code同等のAIエージェントをゼロから構築する方法。19章+付録。
+<details>
+<summary>🔧 構築ガイド全19章の目次</summary>
 
 #### 基礎・設計編
 
@@ -127,6 +143,8 @@ Claude Code の全機能を網羅した32章のリファレンス。
 |---|---|
 | [付録A: ライセンス一覧](BUILD_YOUR_OWN.md#付録a-ライセンス一覧) | 使用ライブラリのライセンス |
 | [付録B: 参考リンク](BUILD_YOUR_OWN.md#付録b-参考リンク) | 公式ドキュメント・論文・コミュニティ |
+
+</details>
 
 ---
 
