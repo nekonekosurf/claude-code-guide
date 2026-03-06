@@ -2,7 +2,6 @@
 layout: default
 title: "ローカルLLM構築ガイド - 基礎・設計編（章1〜5）"
 ---
-{% raw %}
 
 [← トップ](/) | [基礎編](foundations) | [機能編A](features) | [ファインチューニング](finetuning) | [機能編B](features2) | [運用編](operations) | [専門編](specialist)
 
@@ -760,9 +759,9 @@ class ToolExecutor:
 
                 # 出力を制限するラッパー
                 wrapped = f"""
-{{
+{{% raw %}}{{
 {command}
-}} 2>&1 | head -c 30000
+}}{{% endraw %}} 2>&1 | head -c 30000
 echo "___EXIT_CODE_$?___"
 """
                 proc = await asyncio.create_subprocess_shell(
@@ -1452,4 +1451,3 @@ uv run python -m coding_agent.main \
 ---
 
 [次: 機能編A →](features)
-{% endraw %}

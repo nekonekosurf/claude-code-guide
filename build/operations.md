@@ -2,7 +2,6 @@
 layout: default
 title: "ローカルLLM構築ガイド - 運用・最適化編（章12〜15）"
 ---
-{% raw %}
 
 [← トップ](/) | [基礎編](foundations) | [機能編A](features) | [ファインチューニング](finetuning) | [機能編B](features2) | [運用編](operations) | [専門編](specialist)
 
@@ -608,7 +607,7 @@ class MemorySystem:
 形式:
 ```json
 [
-  {{"content": "重要な情報", "type": "procedural|semantic|episodic", "importance": 0.8}}
+  {{% raw %}}{{"content": "重要な情報", "type": "procedural|semantic|episodic", "importance": 0.8}}{{% endraw %}}
 ]
 ```"""
 
@@ -909,4 +908,3 @@ Month 2+ チェックリスト:
 ---
 
 [← 前: 機能編B](features2) | [次: 専門編 →](specialist)
-{% endraw %}

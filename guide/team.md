@@ -2,7 +2,6 @@
 layout: default
 title: "Claude Code 活用ガイド - チーム編（章18〜24）"
 ---
-{% raw %}
 
 [← トップ](/) | [基礎編](basics) | [設定編](config) | [応用編](advanced) | [チーム編](team) | [上級編](expert)
 
@@ -313,7 +312,7 @@ jobs:
     steps:
       - uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: ${{% raw %}}{{ secrets.ANTHROPIC_API_KEY }}{{% endraw %}}
           # @claude メンションに自動応答
 ```
 
@@ -337,7 +336,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: ${{% raw %}}{{ secrets.ANTHROPIC_API_KEY }}{{% endraw %}}
           prompt: |
             このPRのコードをレビューしてください：
             1. コード品質とベストプラクティスへの準拠
@@ -368,7 +367,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: ${{% raw %}}{{ secrets.ANTHROPIC_API_KEY }}{{% endraw %}}
           prompt: |
             このコードベースのセキュリティ監査を実施してください：
             - SQLインジェクション、XSS等の脆弱性
@@ -392,7 +391,7 @@ on:
 
 jobs:
   debug:
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    if: ${{% raw %}}{{ github.event.workflow_run.conclusion == 'failure' }}{{% endraw %}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -400,12 +399,12 @@ jobs:
         id: get-logs
         run: |
           # 失敗したジョブのログを取得
-          gh run view ${{ github.event.workflow_run.id }} --log-failed > build-errors.txt 2>&1 || true
+          gh run view ${{% raw %}}{{ github.event.workflow_run.id }}{{% endraw %}} --log-failed > build-errors.txt 2>&1 || true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{% raw %}}{{ secrets.GITHUB_TOKEN }}{{% endraw %}}
       - uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: ${{% raw %}}{{ secrets.ANTHROPIC_API_KEY }}{{% endraw %}}
           prompt: |
             ビルドが失敗しました。build-errors.txt のエラーを分析し、
             根本原因を特定して修正案を提案してください。
@@ -452,7 +451,7 @@ GitHub Actions での Claude 利用には二重のコストが発生する：
 - uses: anthropics/claude-code-action@v1
   timeout-minutes: 10          # Actions の実行時間上限
   with:
-    anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+    anthropic_api_key: ${{% raw %}}{{ secrets.ANTHROPIC_API_KEY }}{{% endraw %}}
     claude_args: "--max-turns 5 --model claude-sonnet-4-6"  # ターン数とモデル指定
 ```
 
@@ -481,7 +480,7 @@ GitHub Actions での Claude 利用には二重のコストが発生する：
     use_vertex: "true"
     claude_args: "--model claude-sonnet-4@20250514 --max-turns 10"
   env:
-    ANTHROPIC_VERTEX_PROJECT_ID: ${{ steps.auth.outputs.project_id }}
+    ANTHROPIC_VERTEX_PROJECT_ID: ${{% raw %}}{{ steps.auth.outputs.project_id }}{{% endraw %}}
     CLOUD_ML_REGION: us-east5
 ```
 
@@ -1763,4 +1762,3 @@ tail -f ~/.claude/logs/$(ls -t ~/.claude/logs/ | head -1)
 ---
 
 [← 前: 応用編](advanced) | [次: 上級編 →](expert)
-{% endraw %}

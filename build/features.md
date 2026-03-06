@@ -2,7 +2,6 @@
 layout: default
 title: "ローカルLLM構築ガイド - 高度な機能編A（章6〜8）"
 ---
-{% raw %}
 
 [← トップ](/) | [基礎編](foundations) | [機能編A](features) | [ファインチューニング](finetuning) | [機能編B](features2) | [運用編](operations) | [専門編](specialist)
 
@@ -690,16 +689,16 @@ class SubAgentManager:
 以下のJSON形式で回答してください:
 ```json
 [
-  {{
+  {{% raw %}}{{
     "task_id": "task_1",
     "description": "サブタスクの説明",
     "depends_on": []
-  }},
-  {{
+  }}{{% endraw %}},
+  {{% raw %}}{{
     "task_id": "task_2",
     "description": "別のサブタスク",
     "depends_on": ["task_1"]
-  }}
+  }}{{% endraw %}}
 ]
 ```"""
 
@@ -860,4 +859,3 @@ async def demo_parallel():
 ---
 
 [← 前: 基礎編](foundations) | [次: ファインチューニング →](finetuning)
-{% endraw %}

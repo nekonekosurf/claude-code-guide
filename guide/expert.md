@@ -2,7 +2,6 @@
 layout: default
 title: "Claude Code 活用ガイド - 上級編（章25〜32）"
 ---
-{% raw %}
 
 [← トップ](/) | [基礎編](basics) | [設定編](config) | [応用編](advanced) | [チーム編](team) | [上級編](expert)
 
@@ -823,7 +822,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: ${{% raw %}}{{ secrets.ANTHROPIC_API_KEY }}{{% endraw %}}
           prompt: |
             このPRをレビューしてください。
             - セキュリティの問題
@@ -1742,4 +1741,3 @@ claude mcp add zilliz-code-search
 ---
 
 [← 前: チーム編](team)
-{% endraw %}

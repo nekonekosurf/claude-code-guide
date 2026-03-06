@@ -2,7 +2,6 @@
 layout: default
 title: "ローカルLLM構築ガイド - 高度な機能編B（章10〜11）"
 ---
-{% raw %}
 
 [← トップ](/) | [基礎編](foundations) | [機能編A](features) | [ファインチューニング](finetuning) | [機能編B](features2) | [運用編](operations) | [専門編](specialist)
 
@@ -480,8 +479,8 @@ async def extract_entities(
 形式:
 ```json
 [
-  {{"entity1": "衛星", "relation": "使用する", "entity2": "MLI"}},
-  {{"entity1": "MLI", "relation": "提供する", "entity2": "断熱性能"}}
+  {{% raw %}}{{"entity1": "衛星", "relation": "使用する", "entity2": "MLI"}}{{% endraw %}},
+  {{% raw %}}{{"entity1": "MLI", "relation": "提供する", "entity2": "断熱性能"}}{{% endraw %}}
 ]
 ```"""
 
@@ -800,4 +799,3 @@ async def llm_rerank(
 ---
 
 [← 前: ファインチューニング](finetuning) | [次: 運用編 →](operations)
-{% endraw %}
