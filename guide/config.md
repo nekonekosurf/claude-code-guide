@@ -2,6 +2,7 @@
 layout: default
 title: "Claude Code 活用ガイド - 設定編（章6〜10）"
 ---
+{% raw %}
 
 [← トップ](/) | [基礎編](basics) | [設定編](config) | [応用編](advanced) | [チーム編](team) | [上級編](expert)
 
@@ -445,7 +446,7 @@ jobs:
         run: npm install -g @anthropic-ai/claude-code
       - name: Review PR
         env:
-          ANTHROPIC_API_KEY: {% raw %}${{ secrets.ANTHROPIC_API_KEY }}{% endraw %}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           claude -p "Review the changes in this PR for code quality,
           security issues, and best practices. Provide actionable feedback." \
@@ -593,3 +594,4 @@ claude --continue
 ---
 
 [← 前: 基礎編](basics) | [次: 応用編 →](advanced)
+{% endraw %}

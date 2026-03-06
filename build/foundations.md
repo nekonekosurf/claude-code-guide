@@ -2,6 +2,7 @@
 layout: default
 title: "ローカルLLM構築ガイド - 基礎・設計編（章1〜5）"
 ---
+{% raw %}
 
 [← トップ](/) | [基礎編](foundations) | [機能編A](features) | [ファインチューニング](finetuning) | [機能編B](features2) | [運用編](operations) | [専門編](specialist)
 
@@ -348,7 +349,7 @@ def parse_tool_call_from_text(text: str) -> dict | None:
 
     # パターン1: JSONブロック形式
     # ```json
-    # {"tool": "Read", "input": {"file_path": "/path/to/file"}}{% endraw %}
+    # {"tool": "Read", "input": {"file_path": "/path/to/file"}}
     # ```
     json_pattern = r'```json\s*\n(.*?)\n```'
     match = re.search(json_pattern, text, re.DOTALL)
@@ -785,9 +786,9 @@ class ToolExecutor:
 
                 # 出力を制限するラッパー
                 wrapped = f"""
-{% raw %}{{
+{{
 {command}
-}}{% endraw %} 2>&1 | head -c 30000
+}} 2>&1 | head -c 30000
 echo "___EXIT_CODE_$?___"
 """
                 proc = await asyncio.create_subprocess_shell(
@@ -1490,3 +1491,4 @@ uv run python -m coding_agent.main \
 ---
 
 [次: 機能編A →](features)
+{% endraw %}

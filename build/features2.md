@@ -2,6 +2,7 @@
 layout: default
 title: "ローカルLLM構築ガイド - 高度な機能編B（章10〜11）"
 ---
+{% raw %}
 
 [← トップ](/) | [基礎編](foundations) | [機能編A](features) | [ファインチューニング](finetuning) | [機能編B](features2) | [運用編](operations) | [専門編](specialist)
 
@@ -84,7 +85,7 @@ class RAGEngine:
     def add_documents(self, documents: list[dict]) -> int:
         """
         文書をインデックスに追加
-        documents: [{"text": "...", "metadata": {...}}{% endraw %}, ...]
+        documents: [{"text": "...", "metadata": {...}}, ...]
         """
         # チャンキング（500文字ごと、50文字オーバーラップ）
         new_chunks = []
@@ -490,8 +491,8 @@ async def extract_entities(
 形式:
 ```json
 [
-  {% raw %}{{"entity1": "衛星", "relation": "使用する", "entity2": "MLI"}}{% endraw %},
-  {% raw %}{{"entity1": "MLI", "relation": "提供する", "entity2": "断熱性能"}}{% endraw %}
+  {{"entity1": "衛星", "relation": "使用する", "entity2": "MLI"}},
+  {{"entity1": "MLI", "relation": "提供する", "entity2": "断熱性能"}}
 ]
 ```"""
 
@@ -687,7 +688,7 @@ def parent_child_search(
     leaf_chunks = [c for c in chunks if not c.children_ids]
 
     # 検索用の簡易インデックスを構築
-    search_docs = [{"text": c.text, "metadata": {"chunk_id": c.chunk_id}}{% endraw %}
+    search_docs = [{"text": c.text, "metadata": {"chunk_id": c.chunk_id}}
                    for c in leaf_chunks]
 
     results = rag.search(query)
@@ -820,3 +821,4 @@ async def llm_rerank(
 ---
 
 [← 前: ファインチューニング](finetuning) | [次: 運用編 →](operations)
+{% endraw %}
