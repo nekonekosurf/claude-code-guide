@@ -85,7 +85,7 @@ Fine-tuning後:
 #### MultipleNegativesRankingLoss（推奨）
 
 
-<details markdown="1">
+<details>
 <summary>MultipleNegativesRankingLoss（推...（Python）</summary>
 
 ```python
@@ -146,7 +146,7 @@ MRLの学習:
 #### ステップ1: ドメインコーパスからペア生成
 
 
-<details markdown="1">
+<details>
 <summary>aerospace_pair_generator.py（Python）</summary>
 
 ```python
@@ -285,7 +285,7 @@ if __name__ == "__main__":
 #### ステップ2: sentence-transformers v3による公式Hard Negative Mining
 
 
-<details markdown="1">
+<details>
 <summary>hard_negative_mining_v3.py（Python）</summary>
 
 ```python
@@ -354,7 +354,7 @@ print(dataset_with_negatives)
 ### Fine-tuning実装コード
 
 
-<details markdown="1">
+<details>
 <summary>finetune_aerospace_embeddings.py（Python）</summary>
 
 ```python
@@ -517,7 +517,7 @@ if __name__ == "__main__":
 ### 精度評価（Recall@K、MRR、NDCG）
 
 
-<details markdown="1">
+<details>
 <summary>evaluate_embeddings.py（Python）</summary>
 
 ```python
@@ -672,7 +672,7 @@ if __name__ == "__main__":
 ### Fine-tuning済みEmbeddingのRAG統合
 
 
-<details markdown="1">
+<details>
 <summary>rag_with_finetuned_embedding.py（Python）</summary>
 
 ```python
@@ -1111,7 +1111,7 @@ AIエージェントを本番運用する際に人間の判断が必要なポイ
 ### SQLiteフィードバックDB設計
 
 
-<details markdown="1">
+<details>
 <summary>セッション管理（SQL）</summary>
 
 ```sql
@@ -1209,7 +1209,7 @@ CREATE INDEX idx_knowledge_gaps_topic ON knowledge_gaps(topic);
 ### StreamlitによるフィードバックUI実装
 
 
-<details markdown="1">
+<details>
 <summary>feedback_app.py（Python）</summary>
 
 ```python
@@ -1630,7 +1630,7 @@ if __name__ == "__main__":
 ### フィードバックからDPOデータへの自動変換パイプライン
 
 
-<details markdown="1">
+<details>
 <summary>feedback_to_dpo_pipeline.py（Python）</summary>
 
 ```python
@@ -1846,7 +1846,7 @@ if __name__ == "__main__":
 ### 実運用時の注意点（自動化パイプライン）
 
 
-<details markdown="1">
+<details>
 <summary>フィードバック収集システム</summary>
 
 ```

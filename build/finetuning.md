@@ -52,7 +52,7 @@ QLoRA:
 ### Unslothによるファインチューニング
 
 
-<details markdown="1">
+<details>
 <summary>finetune.py（Python）</summary>
 
 ```python
@@ -202,7 +202,7 @@ print("マージ済みモデルを保存しました: ./outputs/space-llm-merged
 ### 学習済みモデルのvLLMへのロード
 
 
-<details markdown="1">
+<details>
 <summary>vLLM 起動コマンド（Bash）</summary>
 
 ```bash
@@ -231,7 +231,7 @@ vllm serve meta-llama/Llama-3.1-8B-Instruct \
 ### データ収集の自動化
 
 
-<details markdown="1">
+<details>
 <summary>collect_training_data.py（Python）</summary>
 
 ```python
@@ -337,7 +337,7 @@ asyncio.run(collect_nasa_ntrs(
 生テキスト（宇宙/航空宇宙ドメインの例）を準備し、チャンク分割します。
 
 
-<details markdown="1">
+<details>
 <summary>data_prep_cpt.py（Python）</summary>
 
 ```python
@@ -424,7 +424,7 @@ dataset.save_to_disk("./aerospace_cpt_dataset")
 #### 手順2: UnslothでCPT実行
 
 
-<details markdown="1">
+<details>
 <summary>train_cpt.py（Python）</summary>
 
 ```python
@@ -564,7 +564,7 @@ print("CPTアダプター保存完了")
 CPTの最大リスクは、新ドメインを学習する過程で汎用能力が劣化することです。
 
 
-<details markdown="1">
+<details>
 <summary>catastrophic_forgetting_mitigation.py（Python）</summary>
 
 ```python
@@ -668,7 +668,7 @@ ORPO（Odds Ratio Preference Optimization）は参照モデルを必要とせず
 #### 方法1: 人手アノテーション
 
 
-<details markdown="1">
+<details>
 <summary>preference_data_human.py（Python）</summary>
 
 ```python
@@ -745,7 +745,7 @@ print(f"選好データ作成完了: {len(preference_examples)} ペア")
 #### 方法2: LLM-as-Judge で自動生成
 
 
-<details markdown="1">
+<details>
 <summary>preference_data_llm_judge.py（Python）</summary>
 
 ```python
@@ -903,7 +903,7 @@ aerospace_questions = [
 ### DPOの実装コード（Unsloth + TRL）
 
 
-<details markdown="1">
+<details>
 <summary>train_dpo.py（Python）</summary>
 
 ```python
@@ -1023,7 +1023,7 @@ tokenizer.save_pretrained("./aerospace_dpo_adapter")
 ### ORPOの実装コード
 
 
-<details markdown="1">
+<details>
 <summary>train_orpo.py（Python）</summary>
 
 ```python
@@ -1154,7 +1154,7 @@ DPO/ORPO（選好最適化）
 ### Loss曲線の読み方
 
 
-<details markdown="1">
+<details>
 <summary>analyze_training_loss.py（Python）</summary>
 
 ```python
@@ -1256,7 +1256,7 @@ Loss曲線の読み方チートシート:
 ### 自動評価指標の実装
 
 
-<details markdown="1">
+<details>
 <summary>evaluation_metrics.py（Python）</summary>
 
 ```python
@@ -1476,7 +1476,7 @@ def evaluate_domain_benchmark(
 ### LLM-as-Judge による評価
 
 
-<details markdown="1">
+<details>
 <summary>llm_judge_eval.py（Python）</summary>
 
 ```python
@@ -1566,7 +1566,7 @@ def llm_judge_evaluate(
 ### Wandb / MLflow でのトラッキング設定
 
 
-<details markdown="1">
+<details>
 <summary>tracking_setup.py（Python）</summary>
 
 ```python
@@ -1721,7 +1721,7 @@ GPU要件: NVIDIA GPU（VRAM 8GB〜）、CUDA 11.8以上
 ```
 
 
-<details markdown="1">
+<details>
 <summary>Unsloth 学習コード（Python）</summary>
 
 ```python
@@ -1750,7 +1750,7 @@ GPU要件: NVIDIA GPU（VRAM 16GB〜 推奨）
 ```
 
 
-<details markdown="1">
+<details>
 <summary>DPO 実装（Python）</summary>
 
 ```python
@@ -1782,7 +1782,7 @@ GPU要件: NVIDIA GPU（VRAM 8GB〜、マルチGPU対応）
 ```
 
 
-<details markdown="1">
+<details>
 <summary>Axolotl 設定ファイル（YAML）</summary>
 
 ```yaml
@@ -1820,7 +1820,7 @@ optimizer: adamw_bnb_8bit
 
 
 
-<details markdown="1">
+<details>
 <summary>Axolotl 設定ファイル（Bash）</summary>
 
 ```bash
@@ -1842,7 +1842,7 @@ GPU要件: NVIDIA/AMD GPU、FSDP対応環境
 ```
 
 
-<details markdown="1">
+<details>
 <summary>Axolotl 設定ファイル（YAML）</summary>
 
 ```yaml
@@ -1877,7 +1877,7 @@ lr_scheduler:
 
 
 
-<details markdown="1">
+<details>
 <summary>QLoRA 学習コード（Bash）</summary>
 
 ```bash

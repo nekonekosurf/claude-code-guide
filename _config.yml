@@ -4,3 +4,4 @@ theme: jekyll-theme-cayman
 
 kramdown:
   input: GFM
+  parse_block_html: true

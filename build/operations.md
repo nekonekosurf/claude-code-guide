@@ -97,7 +97,7 @@ AIエージェントがシェルコマンドを実行する際のセキュリテ
 ### Docker サンドボックス実装
 
 
-<details markdown="1">
+<details>
 <summary>sandbox.py（Python）</summary>
 
 ```python
@@ -227,7 +227,7 @@ class GVisorSandbox(DockerSandbox):
 ### パーミッション管理
 
 
-<details markdown="1">
+<details>
 <summary>permissions.py（Python）</summary>
 
 ```python
@@ -328,7 +328,7 @@ class PermissionGuard:
 ### 使用例: パーミッション付きエージェント
 
 
-<details markdown="1">
+<details>
 <summary>AgentCore 実装（Python）</summary>
 
 ```python
@@ -357,7 +357,7 @@ async def safe_dispatch(tool_name: str, tool_input: dict) -> str:
 ### セッションの保存・復元
 
 
-<details markdown="1">
+<details>
 <summary>session_manager.py（Python）</summary>
 
 ```python
@@ -494,7 +494,7 @@ class SessionManager:
 ### 長期記憶システム（Auto Memory相当）
 
 
-<details markdown="1">
+<details>
 <summary>long_memory.py（Python）</summary>
 
 ```python
@@ -727,7 +727,7 @@ Week 1 チェックリスト:
 ```
 
 
-<details markdown="1">
+<details>
 <summary>minimal_agent.py（Python）</summary>
 
 ```python
@@ -861,7 +861,7 @@ Week 2-3 チェックリスト:
 ```
 
 
-<details markdown="1">
+<details>
 <summary>セッション管理（Python）</summary>
 
 ```python

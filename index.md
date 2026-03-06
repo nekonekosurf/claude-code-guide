@@ -15,7 +15,7 @@ Claude Code は Anthropic が提供するエージェント型コーディング
 
 ## ガイド一覧
 
-<div class="nav-card" markdown="1">
+<div class="nav-card">
 
 ### 📖 Claude Code 活用ガイド
 
@@ -29,7 +29,7 @@ Claude Code は Anthropic が提供するエージェント型コーディング
 
 </div>
 
-<div class="nav-card" markdown="1">
+<div class="nav-card">
 
 ### 🔧 ローカルLLM構築ガイド
 
@@ -46,7 +46,7 @@ Claude Code は Anthropic が提供するエージェント型コーディング
 
 ---
 
-<details markdown="1">
+<details>
 <summary>📖 活用ガイド全32章の目次</summary>
 
 #### 基礎編
@@ -108,7 +108,7 @@ Claude Code は Anthropic が提供するエージェント型コーディング
 
 </details>
 
-<details markdown="1">
+<details>
 <summary>🔧 構築ガイド全19章の目次</summary>
 
 #### 基礎・設計編
