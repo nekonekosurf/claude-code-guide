@@ -4,3 +4,9 @@ theme: jekyll-theme-cayman
 
 kramdown:
   input: GFM
+
+exclude:
+  - README.md
+  - BUILD_YOUR_OWN.md
+  - "*.py"
+  - "*.bak"
