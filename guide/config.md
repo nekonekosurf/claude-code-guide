@@ -45,7 +45,14 @@ claude mcp add --transport stdio --env AIRTABLE_API_KEY=YOUR_KEY airtable \
   -- npx -y airtable-mcp-server
 ```
 
-### 6.3 人気の MCP サーバー
+### 6.3 MCP Registry
+
+2025年9月に **MCP Registry**（公式カタログ）が正式ローンチされた。MCP の発見・管理の標準的な入口となっており、Claude Code の `/mcp` コマンドからも参照できる。また MCP は Linux Foundation の **Agentic AI Foundation** に移管され、オープンガバナンス体制に移行している。
+
+- 公式レジストリ: `https://registry.modelcontextprotocol.io`
+- 仕様バージョン: 2025-11-05（非同期・ステートレス・サーバーID対応）
+
+### 6.4 人気の MCP サーバー
 
 よく使われる MCP サーバーとその用途をまとめます。公式・コミュニティ製合わせて数千のサーバーが公開されています。
 
@@ -62,7 +69,7 @@ claude mcp add --transport stdio --env AIRTABLE_API_KEY=YOUR_KEY airtable \
 | **Sequential Thinking** | 複雑な問題分解 |
 | **Context7** | 最新ドキュメント参照 |
 
-### 6.4 スコープ管理
+### 6.5 スコープ管理
 
 MCP サーバーの設定はスコープによって保存場所が異なります。チームで共有する場合は `project` スコープを使います。
 
@@ -82,7 +89,7 @@ claude mcp add --transport http hubspot --scope user https://mcp.hubspot.com/ant
 ```
 
 
-### 6.5 MCP 管理コマンド
+### 6.6 MCP 管理コマンド
 
 
 ```bash
@@ -93,7 +100,7 @@ claude mcp remove github     # 削除
 ```
 
 
-### 6.6 `.mcp.json` での環境変数展開
+### 6.7 `.mcp.json` での環境変数展開
 
 
 ```json
@@ -111,7 +118,7 @@ claude mcp remove github     # 削除
 ```
 
 
-### 6.7 Claude Code 自体を MCP サーバーとして使う
+### 6.8 Claude Code 自体を MCP サーバーとして使う
 
 ```bash
 claude mcp serve
@@ -257,9 +264,9 @@ HotDogWidget.php が良い例。そのパターンに従って新しいカレン
 |-------|--------------|------|
 | `"think"` | 約4K | 簡単な問題 |
 | `"think hard"` / `"megathink"` | 約10K | 中程度の問題 |
-| `"ultrathink"` | 約32K | 複雑なアーキテクチャ決定、深い分析 |
+| `"ultrathink"` | 約32K | 複雑なアーキテクチャ決定、深い分析（high effort モードを明示的に有効化） |
 
-> **注意**: 2026年現在、extended thinking はデフォルトで有効になっており、`/effort` コマンドで低/中/高/最大を制御できる [^11]。
+> **注意**: バージョン 2.1.68（2026-03-04）で `ultrathink` が再導入された。現在は `medium effort` がデフォルトであり、`ultrathink` はプロンプトに含めることで high effort モードを明示的に起動するキーワードとして機能する。`/effort` コマンドでも低/中/高/最大を制御できる [^11]。
 
 ### 8.2 探索 → 計画 → 実装 → コミットの4フェーズ
 
@@ -270,7 +277,7 @@ HotDogWidget.php が良い例。そのパターンに従って新しいカレン
 
 2. 【計画】実装計画の作成
    > I want to add Google OAuth. What files need to change? Create a plan.
-   (Ctrl+G で計画をエディタで編集可能)
+   (Shift+Tab または /plan でプランモードに切り替えて計画を編集可能)
 
 3. 【実装】ノーマルモードで実装
    > implement the OAuth flow from your plan. Write tests and fix failures.

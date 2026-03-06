@@ -351,7 +351,7 @@ Chrome では正常に動作しています。
 ```
 
 
-Claude が計画を提示したら、`Ctrl+G` でエディタに計画を開いて修正できる。納得できたら Normal Mode に切り替えて実装を指示する。
+Claude が計画を提示したら、`Shift+Tab` または `/plan` でプランモードに切り替えて計画を確認・修正できる。納得できたら Normal Mode に切り替えて実装を指示する。
 
 ---
 
@@ -1277,7 +1277,7 @@ Claude Code には `getDiagnostics` ツールが組み込まれており、TypeS
 
 ---
 
-## 31. ツール比較 2026年版 - Cursor / Copilot / Aider / Windsurf / Cline
+## 31. ツール比較 2026年版 - Cursor / Copilot / Aider / Windsurf / Cline / Kiro
 
 ### 31.1 ツールの位置づけ
 
@@ -1286,7 +1286,7 @@ Claude Code には `getDiagnostics` ツールが組み込まれており、TypeS
 | カテゴリ | ツール | 特徴 |
 |---------|-------|------|
 | **ターミナルエージェント** | Claude Code、Aider、OpenCode | コードベース全体を対象に自律的に動作 |
-| **AI 統合 IDE** | Cursor、Windsurf | VS Code ベースで AI をエディタに深く統合 |
+| **AI 統合 IDE** | Cursor、Windsurf、Kiro | VS Code ベースで AI をエディタに深く統合 |
 | **IDE プラグイン** | GitHub Copilot、Cline（Roo-Code） | 既存の IDE に後付けで AI を追加 |
 
 ---
@@ -1359,24 +1359,36 @@ Claude Code には `getDiagnostics` ツールが組み込まれており、TypeS
 | **弱み** | 公式サポートなし、モデルの品質に依存 |
 | **適した作業** | VS Code ユーザーでコストを抑えたい場合 |
 
+#### Kiro（Amazon）
+
+| 項目 | 詳細 |
+|------|------|
+| **タイプ** | AI 統合 IDE（VS Code ベース） |
+| **料金** | 未公開（2025年7月リリース、プレビュー段階） |
+| **コンテキスト** | セッションをまたいだ永続コンテキスト |
+| **強み** | 「Spec-driven development」（仕様書→コード自動生成）、AWS/GitHub との深い統合、Amazon 社内での大規模実績 |
+| **弱み** | AWS サービス以外との統合は限定的、2026年2月に AWS 障害を引き起こした事例あり |
+| **適した作業** | AWS インフラと連携した開発、仕様書ドリブンの大規模プロジェクト |
+
 ---
 
 ### 31.3 機能比較マトリクス
 
 2026年版のツール比較マトリクスです（A=優秀、B=良好、C=基本的）。
 
-| 機能 | Claude Code | Cursor | Copilot | Aider | Windsurf | Cline |
-|------|:-----------:|:------:|:-------:|:-----:|:--------:|:-----:|
-| 大規模リファクタリング（20+ ファイル） | A | B | C | B | C | B |
-| インラインオートコンプリート | C | A | A | C | B | B |
-| 自然言語でのコード生成 | A | A | B | A | A | A |
-| Git 統合 | A | B | B | A | B | B |
-| テスト生成 | A | B | B | A | B | B |
-| コードベース質問応答 | A | B | C | B | B | B |
-| デバッグ支援 | A | B | B | B | B | B |
-| PR レビュー自動化 | A | C | B | C | C | C |
-| カスタマイズ性 | A | B | C | A | B | A |
-| コスト効率（重量ユーザー） | B | B | B | A | A | A |
+| 機能 | Claude Code | Cursor | Copilot | Aider | Windsurf | Cline | Kiro |
+|------|:-----------:|:------:|:-------:|:-----:|:--------:|:-----:|:----:|
+| 大規模リファクタリング（20+ ファイル） | A | B | C | B | C | B | B |
+| インラインオートコンプリート | C | A | A | C | B | B | B |
+| 自然言語でのコード生成 | A | A | B | A | A | A | A |
+| Git 統合 | A | B | B | A | B | B | B |
+| テスト生成 | A | B | B | A | B | B | B |
+| コードベース質問応答 | A | B | C | B | B | B | B |
+| デバッグ支援 | A | B | B | B | B | B | B |
+| PR レビュー自動化 | A | C | B | C | C | C | B |
+| カスタマイズ性 | A | B | C | A | B | A | B |
+| コスト効率（重量ユーザー） | B | B | B | A | A | A | B |
+| AWS/クラウド統合 | B | C | B | C | C | C | A |
 
 （A=優秀、B=良好、C=基本的）
 
