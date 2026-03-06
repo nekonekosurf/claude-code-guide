@@ -479,8 +479,8 @@ async def extract_entities(
 形式:
 ```json
 [
-  {{% raw %}}{{"entity1": "衛星", "relation": "使用する", "entity2": "MLI"}}{{% endraw %}},
-  {{% raw %}}{{"entity1": "MLI", "relation": "提供する", "entity2": "断熱性能"}}{{% endraw %}}
+  {% raw %}{{"entity1": "衛星", "relation": "使用する", "entity2": "MLI"}}{% endraw %},
+  {% raw %}{{"entity1": "MLI", "relation": "提供する", "entity2": "断熱性能"}}{% endraw %}
 ]
 ```"""
 

@@ -607,7 +607,7 @@ class MemorySystem:
 形式:
 ```json
 [
-  {{% raw %}}{{"content": "重要な情報", "type": "procedural|semantic|episodic", "importance": 0.8}}{{% endraw %}}
+  {% raw %}{{"content": "重要な情報", "type": "procedural|semantic|episodic", "importance": 0.8}}{% endraw %}
 ]
 ```"""
 

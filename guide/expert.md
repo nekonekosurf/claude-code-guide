@@ -822,7 +822,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: anthropics/claude-code-action@v1
         with:
-          anthropic_api_key: ${{% raw %}}{{ secrets.ANTHROPIC_API_KEY }}{{% endraw %}}
+          anthropic_api_key: ${% raw %}{{ secrets.ANTHROPIC_API_KEY }}{% endraw %}
           prompt: |
             このPRをレビューしてください。
             - セキュリティの問題

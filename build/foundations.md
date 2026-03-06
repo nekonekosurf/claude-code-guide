@@ -759,9 +759,9 @@ class ToolExecutor:
 
                 # 出力を制限するラッパー
                 wrapped = f"""
-{{% raw %}}{{
+{% raw %}{{
 {command}
-}}{{% endraw %}} 2>&1 | head -c 30000
+}}{% endraw %} 2>&1 | head -c 30000
 echo "___EXIT_CODE_$?___"
 """
                 proc = await asyncio.create_subprocess_shell(

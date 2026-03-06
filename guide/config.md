@@ -401,7 +401,7 @@ jobs:
         run: npm install -g @anthropic-ai/claude-code
       - name: Review PR
         env:
-          ANTHROPIC_API_KEY: ${{% raw %}}{{ secrets.ANTHROPIC_API_KEY }}{{% endraw %}}
+          ANTHROPIC_API_KEY: ${% raw %}{{ secrets.ANTHROPIC_API_KEY }}{% endraw %}
         run: |
           claude -p "Review the changes in this PR for code quality,
           security issues, and best practices. Provide actionable feedback." \
